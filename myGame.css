@@ -1,20 +1,29 @@
+body {
+  background-color: antiquewhite;
+}
+
 h1 {
-  color: lawngreen;
-  background-color: lightcoral;
+  color: midnightblue;
+  background-color: palegreen;
   text-align: center;
+  padding: 20px;
+  margin: 0;
 }
 
 #stripe {
+  background-color: seashell;
   width: 100%;
   padding-inline-start: 0px;
   text-align: center;
+  margin: 0;
 }
 
 button {
+  height: 100%;
   margin: auto;
-  border: none;
+  border: red;
   outline: none;
-  background-color: aqua;
+  padding: auto;
   background-size: 10px;
   background-position: 10px;
   background-clip: padding-box;
@@ -37,5 +46,5 @@ button {
   justify-content: center;
 }
 .selected {
-  background-color: blue;
+  background-color: palegreen;
 }

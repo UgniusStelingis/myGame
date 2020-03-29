@@ -3,18 +3,22 @@ var square = document.querySelectorAll(".square");
 var mode = document.querySelectorAll("#mode");
 var btnreset = document.getElementById("reset");
 
+randomColor(colorNum);
+
 btnreset.addEventListener("click", function() {
-  alert("con");
+  randomColor(colorNum);
 });
 
 mode[0].addEventListener("click", function() {
   mode[0].classList.add("selected");
   mode[1].classList.remove("selected");
+  colorNum = 3;
 });
 
 mode[1].addEventListener("click", function() {
   mode[1].classList.add("selected");
   mode[0].classList.remove("selected");
+  colorNum = 6;
 });
 
 /* mode.addEventListener("click", function() {
@@ -25,7 +29,6 @@ mode.addEventListener("click", function() {
   alert("connected!");
 });
  */
-randomColor(colorNum);
 
 function colorGenerator() {
   var r = Math.floor(Math.random() * 255 + 1);
@@ -36,6 +39,10 @@ function colorGenerator() {
 
 function randomColor(colorNum) {
   for (var i = 0; i < square.length; i++) {
-    square[i].style.backgroundColor = colorGenerator();
+    if (i < colorNum) {
+      square[i].style.backgroundColor = colorGenerator();
+    } else {
+      square[i].style.display = "none";
+    }
   }
 }
